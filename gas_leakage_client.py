@@ -285,19 +285,11 @@ class GraphFrame(tk.Frame):
 
                 self.pm_10_list.pop(0)
                 self.pm_10_list.append(pm_10)
-                self.pm10_label.config(text=str(pm_10))
-                #print('Air Quality Measurument 1:', pm_1)
-                #print('Air Quality Measurument 2:', pm_25)
-                #print('Air Quality Measurument 3:', pm_10) 
+                self.pm10_label.config(text=str(pm_10)) 
                 voltage = readadc()  
-                #print(f"Raw ADC Reading: {adc_reading}")
-                #print(voltage)
-                #variable_dict = {format(pm_1).encode(),format(voltage).encode()}
                 variable_dict = {'v1':pm_25,'v2':voltage}
                 serialized_data = json.dumps(variable_dict)
-                #print('Air Quality Measurument 2:', serialized_data)
                 s.sendall(serialized_data.encode())
-                #s.sendall(format(pm_1).encode(), voltage)
                 data_server = s.recv(1024)
                 print(f"Received data: {repr(data_server)}")
                 if "there is a gas leakage" in data_server.decode():
