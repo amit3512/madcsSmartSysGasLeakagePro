@@ -26,9 +26,6 @@ while True:
    time.sleep(1)
  elif 25 < v1_air_quality_data and v2_gas_sensor_data > 145 :
    conn.sendall(b'Air Quality is not Fine but there is no gas leakage')
-   time.sleep(1)
-    #if not data: break
-    #conn.sendall('Zhakat')
-    
+   time.sleep(1)    
 #conn.close()
 
