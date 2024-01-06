@@ -11,7 +11,6 @@ s.listen(1)
 conn, addr = s.accept()
 print('Connected by', addr)
 while True:
-
  data = conn.recv(1024)
  data_decode = data.decode()
  vs = json.loads(data_decode)
