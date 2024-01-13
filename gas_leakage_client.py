@@ -299,10 +299,10 @@ class GraphFrame(tk.Frame):
                 if pm_25 <= 25:
                     self.img_label.config(image=self.healthy_img)
                     self.img_label.image = self.healthy_img
-                elif 25 < pm_25 <= 50:
+                elif 25 < pm_25 <= 75:
                     self.img_label.config(image=self.unhealthy_img)
                     self.img_label.image = self.unhealthy_img
-                elif pm_25 > 50:
+                elif pm_25 > 75:
                     self.img_label.config(image=self.hazardous_img)
                     self.img_label.image = self.hazardous_img
                     
